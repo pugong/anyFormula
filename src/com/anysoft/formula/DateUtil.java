@@ -123,7 +123,7 @@ public class DateUtil {
 	/**
 	 * 日期格式化工具
 	 */
-	protected static SimpleDateFormat formater = new SimpleDateFormat("yyyyMMdd:HH");
+	protected static SimpleDateFormat formater = new SimpleDateFormat("yyyyMMdd");
 	
 	/**
 	 * 按照模板格式化日期
@@ -134,7 +134,7 @@ public class DateUtil {
 	public static String formatDate(Date _date,String _pattern){
 		if (_date == null) return "";
 		if (formater == null){
-			formater = new SimpleDateFormat("yyyyMMdd:HH");
+			formater = new SimpleDateFormat("yyyyMMdd");
 		}
 	    formater.applyPattern(_pattern);
 	    return formater.format(_date);	

@@ -98,7 +98,7 @@ public class Demo {
 	public static void testDate(String [] args){
 		DefaultFunctionHelper functionHelper = new DefaultFunctionHelper();
 		Parser parser = new Parser(functionHelper);
-		String formula = "to_char(to_date(now,'yyyyMMdd'),'yyyyMMddhh24miss')";
+		String formula = "to_char(to_date(now,'yyyyMMdd'),'yyyyMMddhhmmss')";
 		Expression expr = parser.parse(formula);
 		
 		System.out.println(expr.toString());
@@ -141,5 +141,11 @@ public class Demo {
 	
 	public static void main(String[]args){
 		testDate(args);
+		testString(args);
+		testNvl(args);
+		simple(args);
+		// withDataProvider(args);
+        withDefaultFunctionHelper(args);
+        withFunctionHelper(args);
 	}	
 }
