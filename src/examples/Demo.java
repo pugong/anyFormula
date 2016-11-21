@@ -57,16 +57,15 @@ public class Demo {
 	}
 	
 	public static void withFunctionHelper(String[]args){
-		Parser parser = new Parser(new FunctionHelper(){
-			public Expression customize(String funcName) {
-				if (funcName.equals("choice")){
-					return new Function.Choice();
-				}
-				return null;
-			}			
-		});
-		
-		String formula = "1+2+choice(2>1,100,2000)";
+
+        Parser parser = new Parser((funcName) -> {
+            if (funcName.equals("choice")){
+                return new Function.Choice();
+            }
+            return null;
+        } );
+
+        String formula = "1+2+choice(2>1,100,2000)";
 		
 		Expression expr = parser.parse(formula);
 		

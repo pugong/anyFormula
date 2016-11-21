@@ -21,14 +21,14 @@ public class DateUtil {
 	 */
 	public static Date parseDate(String _value,String _pattern,Date _instance){
 		if (_value.length() < _pattern.length()) return _instance;
-		int _year = 0;
-		int _month = 0;
-		int _day = 0;
-		int _hour = 0;
-		int _minute = 0;
-		int _second = 0;
+		int _year;
+		int _month;
+		int _day;
+		int _hour;
+		int _minute;
+		int _second;
 		//to find the year
-		int _index = 0;
+		int _index;
 		_index = _pattern.indexOf("yyyy");
 		if (_index >= 0){
 			//found
